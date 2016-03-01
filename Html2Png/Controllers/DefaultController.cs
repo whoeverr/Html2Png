@@ -37,6 +37,8 @@ namespace Html2Png.Controllers
             try
             {
                 // Launch PhantomJS and take a screen shot into image file.
+                var startInfo = new ProcessStartInfo("~/bin/phantomjs.exe", "--webdriver=8080");
+                var proc = Process.Start(startInfo);
                 var procInfo = new ProcessStartInfo
                 {
                     FileName = Server.MapPath("~/bin/phantomjs.exe"),
